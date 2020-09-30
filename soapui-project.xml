@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="0e8fa3f3-4c17-4b5a-860d-2ec4aef7e589" activeEnvironment="Default" name="REST Project 1" resourceRoot="" soapui-version="5.6.0"
+  xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Report Format(s)" value=""/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="Export JUnit Results" value="false"/>
+  <con:entry key="Export All" value="false"/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="TestSuite" value="XKCD"/>
+  <con:entry key="Endpoint" value=""/>
+  <con:entry key="Select Report Type" value=""/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="Print Report" value="true"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Export JUnit Results with test properties" value="false"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="TestCase" value="&lt;all>"/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="user-settings.xml Password" value=""/>
+  <con:entry key="TestRunner Path" value=""/>
+  <con:entry key="Environment" value="Default"/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="Root Folder" value=""/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Save Project" value="false"/>
+</xml-fragment>]]></con:setting>
+  </con:settings>
+  <con:interface xsi:type="con:RestService" id="ccf1e30d-48e5-4363-833d-e4a00c75ed4b" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://xkcd.com" type="rest"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT" rootPart=""/>
+    <con:endpoints>
+      <con:endpoint>http://xkcd.com</con:endpoint>
+    </con:endpoints>
+    <con:resource name="Random Comic" path="/info.0.json" id="2455e792-7fb0-4b43-b66c-b7c0927aa7dd">
+      <con:settings/>
+      <con:parameters/>
+      <con:method name="Info.0.json 1" id="e64ea737-e4d1-4029-832d-83fe1508fa68" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element xmlns:info="https://xkcd.com/info.0.json">info:Response</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="635da3f0-96fa-46e0-98c7-b5d6893214a0" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>http://xkcd.com</con:endpoint>
+          <con:request/>
+          <con:originalUri>https://xkcd.com/info.0.json</con:originalUri>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+    <con:resource name="Specifc comic" path="/{comicId}/info.0.json" id="8843f9dd-fed4-4223-9564-244292402521">
+      <con:settings/>
+      <con:parameters>
+        <con:parameter required="false">
+          <con:name>comicId</con:name>
+          <con:value>comicId</con:value>
+          <con:style>TEMPLATE</con:style>
+          <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:integer</con:type>
+          <con:default>comicId</con:default>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Method 1" id="e38749d3-61c2-49e0-9c24-a4c7630557de" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="FAULT">
+          <con:mediaType>text/html; charset=UTF-8</con:mediaType>
+          <con:status>404</con:status>
+          <con:params/>
+          <con:element>html</con:element>
+        </con:representation>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element xmlns:info="https://xkcd.com/comicId/info.0.json">info:Response</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="1b943f7a-974a-4f24-8c68-c19620398bbe" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>http://xkcd.com</con:endpoint>
+          <con:request/>
+          <con:originalUri>https://xkcd.com/comicId/info.0.json</con:originalUri>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters>
+            <entry key="comicId" value="386"
+              xmlns="http://eviware.com/soapui/config"/>
+          </con:parameters>
+          <con:parameterOrder>
+            <con:entry>comicId</con:entry>
+          </con:parameterOrder>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:interface xsi:type="con:RestService" id="b25c3c48-29d2-4d66-a9be-5424fee890e8" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://jsonplaceholder.typicode.com" type="rest"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT" rootPart=""/>
+    <con:endpoints>
+      <con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint>
+    </con:endpoints>
+    <con:resource name="Comments" path="/comments" id="95fc6cdd-d987-4ff9-b214-53f39d0e8426">
+      <con:settings/>
+      <con:parameters>
+        <con:parameter>
+          <con:name>postId</con:name>
+          <con:value>1</con:value>
+          <con:style>QUERY</con:style>
+          <con:default>1</con:default>
+          <con:path xsi:nil="true"/>
+          <con:description xsi:nil="true"/>
+        </con:parameter>
+      </con:parameters>
+      <con:method name="Comments 1" id="d6b5291d-33fd-4daf-86a6-99344757a147" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json; charset=utf-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element>Response</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="9cb89665-004e-485a-8f9d-0877a7441f2c" mediaType="application/json">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint>
+          <con:request/>
+          <con:originalUri>https://jsonplaceholder.typicode.com/comments</con:originalUri>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters>
+            <entry key="postId" value="1"
+              xmlns="http://eviware.com/soapui/config"/>
+          </con:parameters>
+          <con:parameterOrder>
+            <con:entry>postId</con:entry>
+          </con:parameterOrder>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:testSuite id="0c0883c1-3b0c-48e9-ade8-0e549996929b" name="XKCD">
+    <con:settings/>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="ec245d83-b430-4bf7-9587-6dfad3680645" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="SpecificComic" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="restrequest" name="Info.0.json 1 - Request 1" id="f3c22b4d-0dc2-49ab-ae8a-dae2d4d4f173">
+        <con:settings/>
+        <con:config service="http://xkcd.com" resourcePath="/{comicId}/info.0.json" methodName="Method 1" xsi:type="con:RestRequestStep"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Info.0.json 1 - Request 1" id="635da3f0-96fa-46e0-98c7-b5d6893214a0" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://xkcd.com</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://xkcd.com/info.0.json</con:originalUri>
+            <con:assertion type="Sensitive Information Exposure" id="19663c24-d96d-4dfc-84ad-c26ad12487ef" name="Sensitive Information Exposure">
+              <con:configuration>
+                <AssertionSpecificExposureList>password###Password</AssertionSpecificExposureList>
+                <IncludeProjectSpecific>true</IncludeProjectSpecific>
+                <IncludeGlobal>true</IncludeGlobal>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Match" id="1f144461-2045-45e7-93f3-aa474fc6c070" name="JsonPath Match">
+              <con:configuration>
+                <path>safe_title</path>
+                <content>Duty Calls</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Valid HTTP Status Codes" id="fb69b868-9544-4ce5-9945-1c8bed7eb199" name="Valid HTTP Status Codes">
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="comicId" value="386"
+                xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:testCase id="fd62a48f-2494-4a66-9583-6cf3201e6950" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="RandomComic" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="restrequest" name="Info.0.json 1 - Request 1" id="b9574831-2b72-4c63-9a00-801a5ba76a9c">
+        <con:settings/>
+        <con:config service="http://xkcd.com" resourcePath="/info.0.json" methodName="Info.0.json 1" xsi:type="con:RestRequestStep"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="Info.0.json 1 - Request 1" id="635da3f0-96fa-46e0-98c7-b5d6893214a0" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://xkcd.com</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://xkcd.com/info.0.json</con:originalUri>
+            <con:assertion type="Sensitive Information Exposure" id="19663c24-d96d-4dfc-84ad-c26ad12487ef" name="Sensitive Information Exposure">
+              <con:configuration>
+                <AssertionSpecificExposureList>password###Password</AssertionSpecificExposureList>
+                <IncludeProjectSpecific>true</IncludeProjectSpecific>
+                <IncludeGlobal>true</IncludeGlobal>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="JsonPath Existence Match" id="91e18217-32ab-4cea-bc1a-859d4cc31eda" name="Body has title element">
+              <con:configuration>
+                <path>$.title</path>
+                <content>true</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:properties/>
+  </con:testSuite>
+  <con:testSuite id="d381cb53-c19f-4418-86e9-0bee5fd8e51e" name="JsonPlaceholderTests">
+    <con:settings/>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="ab803771-115e-4a0b-a2fb-1b4d97b9366e" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="testJsonSchema" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="restrequest" name="REST Request" id="fec5f6fb-10ca-44a7-84ab-659ebf99ff13">
+        <con:settings/>
+        <con:config service="https://jsonplaceholder.typicode.com" resourcePath="/comments" methodName="Comments 1" xsi:type="con:RestRequestStep"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="REST Request" id="9cb89665-004e-485a-8f9d-0877a7441f2c" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint>
+            <con:request/>
+            <con:originalUri>https://jsonplaceholder.typicode.com/comments</con:originalUri>
+            <con:assertion type="Schema Compliance" id="3ac559d2-6cb5-4098-a740-3ca8821ec88e" name="Schema Compliance">
+              <con:configuration/>
+            </con:assertion>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:parameters>
+              <entry key="postId" value="1"
+                xmlns="http://eviware.com/soapui/config"/>
+            </con:parameters>
+            <con:parameterOrder>
+              <con:entry>postId</con:entry>
+            </con:parameterOrder>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+    </con:testCase>
+    <con:properties/>
+  </con:testSuite>
+  <con:properties/>
+  <con:wssContainer/>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/>
+</con:soapui-project>
